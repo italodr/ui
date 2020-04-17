@@ -10,7 +10,12 @@ const Code = ({ component }) => {
   useEffect(() => {
     setIsLoading(true);
     (async () => {
-      await axios.get(`/api/ui/${component}`);
+      console.log(component);
+      await axios.get(`/api/ui/${component}`, {
+        headers: {
+          'Access-Control-Allow-Origin': '*'
+        }
+      });
       setIsLoading(false);
     })();
   }, []);
@@ -18,7 +23,7 @@ const Code = ({ component }) => {
   return isLoading ? (
     <Loader />
   ) : (
-    <Iframe src={`http://localhost:5000/${component}.html`} frameBorder='0'></Iframe>
+    <Iframe src={`http://localhost:5000/${component}.html`} frameBorder="0"></Iframe>
   );
 };
 export default Code;

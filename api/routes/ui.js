@@ -39,7 +39,7 @@ router.get('/:component', async (req, res) => {
       scripts
     });
 
-    fs.writeFile(`${__dirname}/../public/${component}.html`, output, (err) => {
+    fs.writeFile(`${__dirname}/../public/${component}.html`, output, err => {
       if (err) throw err;
     });
 
