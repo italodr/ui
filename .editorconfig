@@ -11,6 +11,9 @@ max_line_length = 80
 trim_trailing_whitespace = true
 quote = single
 
+[*.js]
+quote_type = single
+
 [*.md]
 max_line_length = 0
 trim_trailing_whitespace = false
